@@ -32,9 +32,3 @@ def max_subarray(A):
         max_length = max(max_length, current_length)
     return max_length
 
-from random import randint
-for j in range(5):
-    A = [randint(0, 3) for i in range(20)]
-    print(A)
-    print(max_subarray(A))
-
