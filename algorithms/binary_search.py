@@ -27,7 +27,7 @@ def search_first_of_k(A, k):
     # Invariant: A[left: right+1] is the candidate set.
     while left <= right:
         mid = (left + right) // 2
-        if A[mid] > l:
+        if A[mid] > k:
             right = mid - 1
         elif A[mid] == k:
             result = mid
@@ -37,3 +37,25 @@ def search_first_of_k(A, k):
 
     return result
     
+
+def search_first_greater_than_k(A, k):
+    """ Return the index of the first element that is greater than k.
+    O(log n).
+    """
+
+    left, right, result = 0, len(A) - 1, -1
+    
+    # Invariant: A[left:] is the candidate set.
+    while left <= right:
+        mid = (left + right) // 2
+        print("left={}, right={}, mid={}".format(left, right, mid))
+        if A[mid] > k:
+            right = mid - 1
+        elif A[mid] == k:
+            left = mid + 1
+            result = left
+        else:
+            left = mid + 1
+
+    return result
+
