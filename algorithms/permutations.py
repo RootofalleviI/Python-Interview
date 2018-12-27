@@ -1,18 +1,12 @@
-def permutations(A):
-    def directed_permutations(i):
-        if i == len(A) - 1:
-            result.append(A.copy())
-            return
+def coin_changes(amount, coins):
+    combinations = [0] * (amount + 1)
+    combinations[0] = 1
+    for coin in coins:
+        for i in range(amount + 1):
+            if i >= coin:
+                combinations[i] += combinations[i - coin]
+    return combinations[amount]
 
-        # Try every possibility for A[i]
-        for j in range(i, len(A)):
-            A[i], A[j] = A[j], A[i]
-
-            # Generate all permutations for A[i + 1:]
-            directed_permutations(i + 1)
-            A[i], A[j] = A[j], A[i]
-
-    result = []
-    directed_permutations(0)
-    return result
-
+coins = [1, 2, 5]
+amount = 12
+print(coin_changes(amount, coins))
