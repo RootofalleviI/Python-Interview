@@ -1,0 +1,10 @@
+1. search_first_greater_than_k(A, k): return the first element in A that is greater than k. [binary search]
+2. find_kth_largest(A, k): find the kth largest element in an array. [partition]
+3. find_kth_largest(tree, k): find the kth largest element in a bst. [bst]
+4. group_by(A, doc): group_by.py
+5. reverse_words_in_sentence.py
+6. reverse_polish_evaluator.py
+7. merge_two_sorted_arrays.py
+8. max_profit_.py
+9. digit_mult.py
+10. stairs_dp.py
